@@ -1,14 +1,19 @@
 import Image from "next/image";
+import CustomCursor from "@/components/CustomCursor";
+
+import { Space_Grotesk } from "next/font/google";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function Home() {
   return (
-    <div
-      className="min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url('https://img.magnific.com/free-photo/beautiful-view-construction-site-city-sunset_181624-9347.jpg?semt=ais_hybrid&w=740&q=80')`
-      }}
-    >
-      <h1 className="text-6xl text-bold text-center mt-[250px]">Website is under construction.....</h1>
+    <div className="h-screen flex items-center justify-center">
+      <h1 className={`${spaceGrotesk.className} text-8xl`} >
+        MAHADE DEV
+      </h1>
     </div>
   );
 }

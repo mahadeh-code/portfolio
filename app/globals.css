@@ -24,3 +24,65 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Custom cursor: desktop only */
+@media (pointer: fine) {
+  body,
+  body a,
+  body button {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 99999;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .cursor-ring {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #8abfff;
+    border-radius: 50%;
+    background: rgb(138 191 255 / 4%);
+    transition:
+      width 0.3s ease,
+      height 0.3s ease,
+      top 0.3s ease,
+      left 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    margin: -2.5px 0 0 -2.5px;
+    border-radius: 50%;
+    background: #8abfff;
+    z-index: 100000;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .custom-cursor.cursor-hover .cursor-ring {
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    left: -32px;
+    background: rgb(138 191 255 / 10%);
+    box-shadow: 0 0 25px rgb(138 191 255 / 12%);
+  }
+}
