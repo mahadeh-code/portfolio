@@ -11,9 +11,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export default function Home() {
-  const el = useRef(null);
+  const el = useRef<HTMLHeadingElement | null>(null);
 
   useEffect(() => {
+    if (!el.current) return;
+    
     const typed = new Typed(el.current, {
       strings: ['MAHADE', 'DEV'],
       typeSpeed: 30,
